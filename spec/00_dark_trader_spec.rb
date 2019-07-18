@@ -1,4 +1,4 @@
-require_relative '../lib/00_dark_trader'
+require_relative '../lib/dark_trader'
 
 describe "Dark_Trader method include names" do 
 	it "should return many cryptomoney names" do 

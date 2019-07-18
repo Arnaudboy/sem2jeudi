@@ -25,9 +25,9 @@ end
 tab_url.each do |node|
 	tab << get_email(node)
 end
-	final_hash = Hash[*tab_ville.zip(tab).flatten]
-		final_hash.each do |val, key|
-			puts final_tab << ("{ #{val} => #{key} }" )
+	$final_hash = Hash[*tab_ville.zip(tab).flatten]
+		$final_hash.each do |val, key|
+			return final_tab << ("{ #{val} => #{key} }" )
 		end 
 end
 get_url

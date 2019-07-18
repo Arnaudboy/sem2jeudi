@@ -15,6 +15,6 @@ page.xpath('//a[@class="currency-name-container link-secondary"]').each do |node
 	tab_currencies << node.text
 end
 
-Hash[*tab_currencies.zip(tab_prices).flatten].each do |val, key|
-	puts (" { #{val}  => #{key} }")
+$Dark_trader = Hash[*tab_currencies.zip(tab_prices).flatten].each do |val, key|
+	(" { #{val}  => #{key} }")
 end
