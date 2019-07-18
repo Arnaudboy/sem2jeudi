@@ -1,12 +1,12 @@
-require'nokogiri'
+ending_tab_idrequire'nokogiri'
 require'open-uri'
 require'pry'
-
+begin
 def get_email(uri)
 	 url = Nokogiri::HTML(open("http://www2.assemblee-nationale.fr#{uri}"))
 	    url.xpath('//*[@id="haut-contenu-page"]/article/div[3]/div/dl/dd[4]/ul/li[2]/a').each do |adresse|
 	       adresse.text
-	       return ("adresse email = #{adresse.text}")
+	       return ("adresse email => #{adresse.text} } \n ")
         end
 end
 
@@ -25,9 +25,10 @@ tab_nom << node.text
 	
 	tab_nom.each do |name|
 		cut = name.split
-		final_tab << ("prenom = #{cut[1]}")
-		final_tab << ("nom = #{cut[2]}")
+		final_tab << ("{ first_name => #{cut[1]}")
+		final_tab << (" last_name => #{cut[2]}")
 	end
+
 end
 
 tab_url.each do |node|
@@ -36,7 +37,9 @@ end
 
 	final_hash = Hash[*final_tab.zip(final_tab_mail).flatten]
 		final_hash.each do |val, key|
-			puts ending_tab << ("{ #{val} => #{key} }" )
+			puts ending_tab << ("{ #{val} \n #{key} }" )
 		end 
 end
 get_url
+rescue => e
+end
