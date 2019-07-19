@@ -1,7 +1,7 @@
 require'nokogiri'
 require'open-uri'
 require'pry'
-
+def darktrader
 tab_prices = []
 tab_currencies = []
 
@@ -18,3 +18,5 @@ end
 $dark_trader = Hash[*tab_currencies.zip(tab_prices).flatten].each do |val, key|
 	(" { #{val}  => #{key} }")
 end
+end
+puts darktrader
